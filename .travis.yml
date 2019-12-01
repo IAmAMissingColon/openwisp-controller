@@ -1,7 +1,10 @@
 language: python
 sudo: false
 cache: pip
-dist: trusty
+dist: 
+  - trusty
+  - xenial
+  - bionic
 
 addons:
   apt:
@@ -28,6 +31,7 @@ matrix:
 branches:
   only:
     - master
+    - update/versions
 
 before_install:
   - export PIPENV_IGNORE_VIRTUALENVS=1
