@@ -23,7 +23,7 @@ class TestController(CreateConfigTemplateMixin, TestOrganizationMixin,
     template_model = Template
 
     def _create_org(self, shared_secret=TEST_ORG_SHARED_SECRET, **kwargs):
-        org = super(TestController, self)._create_org(**kwargs)
+        org = super()._create_org(**kwargs)
         OrganizationConfigSettings.objects.create(organization=org,
                                                   shared_secret=shared_secret)
         return org

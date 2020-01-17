@@ -1,4 +1,4 @@
-from channels.test import ChannelTestCase
+from channels.testing import ChannelTestCase
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import Permission
 from django_loci.tests.base.test_channels import BaseTestChannels

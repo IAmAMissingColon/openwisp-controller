@@ -33,7 +33,7 @@ class DeviceLocationView(generics.RetrieveUpdateAPIView):
             return None
 
     def get_object(self, *args, **kwargs):
-        device = super(DeviceLocationView, self).get_object()
+        device = super().get_object()
         location = self.get_location(device)
         if location:
             return location
@@ -43,7 +43,8 @@ class DeviceLocationView(generics.RetrieveUpdateAPIView):
     def create_location(self, device):
         location = Location(name=device.name,
                             type='outdoor',
-                            organization=device.organization)
+                            organization=device.organization,
+                            is_mobile=True)
         location.full_clean()
         location.save()
         dl = DeviceLocation(content_object=device,

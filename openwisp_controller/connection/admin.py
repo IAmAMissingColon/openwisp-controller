@@ -33,7 +33,7 @@ class DeviceConnectionInline(MultitenantAdminMixin, admin.StackedInline):
         """
         Override MultitenantAdminMixin.get_queryset() because it breaks
         """
-        return super(admin.StackedInline, self).get_queryset(request)
+        return super().get_queryset(request)
 
 
 DeviceAdmin.inlines += [DeviceConnectionInline]
